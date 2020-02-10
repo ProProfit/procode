@@ -5,9 +5,24 @@
 body
 	background-color: #f4f6f6
 	font-family: 'Play', sans-serif
+	font-size: 14px
+	font-weight: 400
+	line-height: 1.4
 	width: 100%
 	height: 100vh
-	color: #193441
+	color: #27332C
+
+a
+	color: #44B39D
+	text-decoration: none
+	&:visited
+		color: #44B39D
+	&:hover
+		color: #8ea6b2
+
+
+
+
 
 // HEADER
 header
@@ -16,7 +31,7 @@ header
 	justify-content: space-between
 	align-items: center
 	padding: 20px 70px
-	background-color: #516373
+	background-color: #3B3C3D
 	a
 		color: #BACDD9
 		&:visited
@@ -24,13 +39,20 @@ header
 		&:hover
 			color: #DCEAF2
 	
-a
-	color: #1e383c
-	text-decoration: none
-	&:visited
-		color: #47646f
-	&:hover
-		color: #8ea6b2
+
+
+// LOGO
+.logo
+	a
+		font-size: 22px
+		color: #9DABA2
+		&:visited
+			color: #9DABA2
+		&:hover
+			color: #fff
+
+
+
 
 // POST
 .post-item
@@ -38,15 +60,16 @@ a
 	width: 820px
 	height: 100%
 	margin: 10px auto
-	border-radius: 5px
-	border: 1px solid #eee
+	border-radius: 10px
+	border: 1px solid #d8d8d8
+	overflow: hidden
 	&_content
 		padding: 10px 20px
-	&_data
+	&__data
 		display: block
-		font-style: 12px
+		font-size: 14px
 		margin: 10px
-	&_content
+	&__content
 		img
 			width: 100%
 	
@@ -66,7 +89,7 @@ a
 	width: 820px
 	padding: 20px
 	border: 1px solid #eee
-	
+
 	
 
 // IMG COVER
@@ -95,18 +118,27 @@ a
 // FOOTER
 
 .footer
+	justify-content: space-between
 	margin-top: 15%
 	color: #c3ccd3
-	background-color: #516373
+	background-color: #3B3C3D
 	text-align: center
-	padding: 50px
+	// padding: 50px
 	&_col
 		display: flex
-		justify-content: space-between
-		padding: 0 20px
+		// padding: 0 20px
 		align-items: center
+		justify-content: space-between
 		&_item
-			display: block
-			width: 450px
+			display: inline-block
+	justify-content: space-between
+			width: 250px
 			height: 100%
 	
+	// TAGs
+
+.tags
+	color: #E6567A
+	
+.highligher-rouge
+	color: #DCDCDC
