@@ -1,29 +1,56 @@
 ---
 ---
-@charset "utf-8"	
-@import 'reset.sass', '_native.sass'
+@charset "utf-8"
+@import 'reset.sass', 'native.sass'
+
+// COLORS
+
+$bg-head-footer: #4D5959
+
+html
+	position: relative
+	min-height: 100%
+
+.container
+	display: flex
+	justify-content: space-between
+	padding: 2px 20px
+	align-items: center
 body
-	background-color: #f4f6f6
+	background-color: #F2F2F2
 	font-family: 'Play', sans-serif
-	width: 100%
-	height: 100vh
-	color: #193441
+	font-size: 14px
+	font-weight: 400
+	line-height: 1.4
+	color: #27332C
+	
 
 // HEADER
-header
-	display: flex
+.header
+	position: fixed
+	width: 100%
+	top: 0
 	color: #BACDD9
-	justify-content: space-between
 	align-items: center
-	padding: 20px 70px
-	background-color: #516373
+	background-color: $bg-head-footer
+	border-bottom: 3px solid #DFF68F
+	z-index: 2
+	.top_nav
+		ul
+			display: flex
+		li 
+			margin-right: 20px
+			
+.logo
+	font-size: 23px
+
+.header, .footer
 	a
 		color: #BACDD9
 		&:visited
 			color: #BACDD9
 		&:hover
 			color: #DCEAF2
-	
 a
 	color: #1e383c
 	text-decoration: none
@@ -33,41 +60,45 @@ a
 		color: #8ea6b2
 
 // POST
+.home-post-list, .post, .page
+	margin: 5% auto
 .post-item
 	background-color: #ffffff
 	width: 820px
 	height: 100%
-	margin: 10px auto
+	margin-left: auto
+	margin-right: auto
+	margin-top: 20px
 	border-radius: 5px
 	border: 1px solid #eee
 	&_content
 		padding: 10px 20px
 	&_data
 		display: block
-		font-style: 12px
+		font-style: 14px
 		margin: 10px
 	&_content
 		img
 			width: 100%
-	
 // POST TITLE
 
 .post-link
 	font-size: 26px
 	font-weight: 400
-	
-	
+	color: #47646f
+	&:hover
+		color: #786fa6
+
+.post-item__data
+	padding: 10px 0 0 10px
 // PAGES
 
-.post
+.post, .page
 	background-color: #ffffff
 	display: block
-	margin: 20px auto
-	width: 820px
+	width: 1020px
 	padding: 20px
 	border: 1px solid #eee
-	
-	
 
 // IMG COVER
 
@@ -77,15 +108,17 @@ a
 	display: block
 	background-size: cover
 	background-position: center center
+
 	&:hover
+		border: none
 		filter: opacity(30%)
 
 // MORE...
 
-.expert-post-link
-	padding: 2px
-	border-radius: 5px
-	color: #ffffff
+// .expert-post-link
+// 	padding: 2px
+// 	border-radius: 5px
+// 	color: #ffffff
 
 // LIGHET CODE
 
@@ -95,18 +128,26 @@ a
 // FOOTER
 
 .footer
-	margin-top: 15%
 	color: #c3ccd3
-	background-color: #516373
-	text-align: center
-	padding: 50px
-	&_col
-		display: flex
-		justify-content: space-between
-		padding: 0 20px
-		align-items: center
-		&_item
-			display: block
-			width: 450px
-			height: 100%
-	
+	background-color: $bg-head-footer
+	padding: 2px 0
+	position: absolute
+	bottom: 0
+	width: 100%
+	flex: 0 0 auto
+.footer_col
+	&_item
+		display: block
+		width: 450px
+		height: 100%
+
+	// TAGs
+
+.tags
+	color: #E6567A
+
+.highligher-rouge
+	color: #e2e2e2
+	// background-color: #47646f
+	// border-radius: 3px
+	// padding: 1px 2px
