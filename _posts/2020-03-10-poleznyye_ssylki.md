@@ -15,3 +15,10 @@ cover:
 
 [Cloud9](https://aws.amazon.com/ru/cloud9/) -- Amazon выкупило в свое время **Cloud9**
 
+## Сервисы подбора цвета для веб-дизайна
+
+[color.adobe.com](color.adobe.com)
+
+[palettable.io](palettable.io)
+
+[flatcolors.net](flatcolors.net)
