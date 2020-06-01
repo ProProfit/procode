@@ -5,8 +5,10 @@ layout: default
 <h1>Статьи: {{ page.tag }}</h1>
 <ul>
 {% for post in site.tags[page.tag] %}
-  <li><a href="{{ post.url }}">{{ post.title }}</a> [{{ post.date | date: '%d.%m.%Y' }}]<br>
-    {{ post.description }}
+  <li>
+    <a class="links_a" href="{{ post.url }}">{{ post.title }}</a>[{{ post.date | date: '%d.%m.%Y' }}]<br>
+    <!-- {{ post.description }} -->
+   
   </li>
 {% endfor %}
 </ul>

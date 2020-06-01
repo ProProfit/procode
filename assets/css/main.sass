@@ -47,17 +47,19 @@ body
 .header, .footer
 	a
 		color: #BACDD9
+		text-decoration: none
 		&:visited
 			color: #BACDD9
 		&:hover
 			color: #DCEAF2
+			background: none
 a
 	color: #1e383c
-	text-decoration: none
 	&:visited
 		color: #47646f
 	&:hover
-		color: #8ea6b2
+		// color: #fff
+		text-decoration: none
 
 // POST
 .home-post-list, .post, .page
@@ -82,20 +84,31 @@ a
 		img
 			width: 100%
 			
-.post-content
+.post-content, .post
 	a
+		text-decoration: underline
+		text-decoration-color: #d6ec8c
 		&:hover
-			color: #ffffff
-			background: #47646f
+			// color: #ffffff
+			background: #d6ec8c
+			text-decoration: none
+
+// a in posts links
+.links_a
+	// font-weight: bold	
+	
+	
+	
 // POST TITLE
 
 .post-link
 	font-size: 26px
 	font-weight: 400
 	color: #47646f
+	text-decoration: none
 	&:hover
-		color: #786fa6
-
+		text-decoration: underline
+		text-decoration-color: #d6ec8c
 .post-item__data
 	padding: 3px 0 0 5px
 // PAGES
@@ -156,7 +169,11 @@ a
 	// TAGs
 
 .tags
-	color: #E6567A
+	a
+		text-decoration: none
+		&:hover
+			background: none
+
 
 .highligher-rouge
 	color: #c3d2d2

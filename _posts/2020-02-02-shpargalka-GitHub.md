@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub"
 date:   2020-02-02 11:04:13 +0000
 description: 
-tags: github
+tags: shpargalki github
 cover: https://media.proglib.io/posts/2020/01/24/b1060909dfd0eb9e7f4d36eb930b1123.jpg
 ---
 
@@ -75,22 +75,29 @@ function helloWorld(param1, param2) {
 Теперь попробуем заставить появиться удалённую ветку dev. Извлечём все последние изменения удалённого репозитория:
 
             
+
+
+    
+{% highlight git %}
+
 $git fetch –all
 
-        
+{% endhighlight %}    
 
 Теперь dev появилась среди других веток, потому что с помощью git fetch извлекаются последние актуальные метаданные.
 
 
 Чтобы извлечь и скопировать все изменения из удалённого репозитория, нужно использовать команду git pull:
-
             
+{% highlight git %}
+
 $git pull origin dev (ключевое слово origin указывает на удаленный репозиторий)
 
-        
+{% endhighlight %}    
+       
 Теперь информация о ветке верна. Чтобы просмотреть удалённые и локальные ветки, можно использовать уже известную команду с другим ключом:
 
-          {% highlight sass %}   
+{% highlight sass %}   
 //  Статьи на главной 
 .post-item
     background: #ffffff
@@ -134,7 +141,7 @@ $git pull origin dev (ключевое слово origin указывает на
     background-position: center
     filter: opacity(30%)
     &:hover
-        filter: none
+    filter: none
 
 {% endhighlight %}
         
@@ -142,54 +149,67 @@ $git pull origin dev (ключевое слово origin указывает на
 Переключение между ветками
 Всё готово к разработке, и непосредственно перед началом нам нужно изменить текущую ветку с master на dev. Сделаем это в локальном репозитории с помощью команды:
 
-            
+
+{% highlight git %}
+
 $git checkout dev
 
-        
+{% endhighlight %}    
 
 Как говорилось ранее, dev должна быть основной ветвью для разработки и все действия должны начинаться именно из неё.
 
 CRUD операции с ветками
 Создание ветви
 Создадим новую ветвь из ветви dev:
+         
+{% highlight git %}
 
-            
 $git branch my-new-faeture
 
-        
+{% endhighlight %}
 
 Снова проверим локальные ветви:
-
 
 Обновление имени ветки
 Чтобы поменять имя существующей ветки, нет необходимости создавать всё сначала т. к. есть специальная команда:
 
-            
+{% highlight git %}
+
 $git branch -m my-bug-fix
 
+{% endhighlight %}
         
 Если вы находитесь в другой ветви, вы всё равно можете переименовать любую из них следующим образом:
 
-            
+{% highlight git %}
+
 $git branch -m my-new-faeture my-new-feature
 
-        
-Проверим правильность указанных имён:
+{% endhighlight %}  
 
+Проверим правильность указанных имён:
 
 Коммит ветки
 Внесём изменения в файл README.md и проверим локальный репозиторий:
 
             
+
+{% highlight git %}
+
 $git status
+
+{% endhighlight %}  
 
         
 
 Перенесём файл в промежуточную область и сделаем коммит:
 
-            
+{% highlight git %}
+
 $git add README.md
 $git commit -m "my first commit"
+
+{% endhighlight %}  
 
         
 
@@ -199,10 +219,13 @@ $git commit -m "my first commit"
 Отправка изменений на удалённый сервер
 Теперь можно пушить коммит:
 
-            
+        
+{% highlight git %}
+
 $git push origin my-new-branch
 
-        
+{% endhighlight %}  
+
 
 После отправки актуальной информации о ветке в удалённый репозиторий, нужно проверить, всё ли прошло корректно:
 
@@ -211,23 +234,38 @@ $git push origin my-new-branch
 Если есть необходимость в удалении ветви, переходим в dev (или в любую ветку, которую нужно удалить) и выполняем удаление:
 
             
+
+
+
+{% highlight git %}
+
 $git checkout dev
 $git branch -d my-new-branch
+
+{% endhighlight %}  
 
         
 
 Удаление завершилось неудачно т. к. удаление локальной ветви с помощью команды git branch -d является безопасной операцией. Если ветка имеет статус unpushed или unmerged , её можно удалить только принудительно:
 
             
+
+{% highlight git %}
+
 $git branch -D my-new-branch
 
+{% endhighlight %}  
         
 
 Как насчёт удаления remote-ветки? Для этой цели у push есть ключ --delete:
 
             
+
+{% highlight git %}
+
 $git push origin --delete my-new-branch
 
+{% endhighlight %}  
         
 
 Проверим:
@@ -244,23 +282,35 @@ $git push origin --delete my-new-branch
 Проверим состояние ветки:
 
             
+
+{% highlight git %}
+
 $git status
 
+{% endhighlight %}  
         
 
 Наблюдаем изменённый файлик README.md, коммитим текущее изменение локального репозитория, добавив файл в промежуточную область:
 
             
+
+{% highlight git %}
+
 $git add README.md
 $git commit -m "my killer feature"
 
-        
+{% endhighlight %}  
 
 Пушим результат на удалённый сервер:
 
             
+
+{% highlight git %}
+
 $git push origin feature/my-killer-feature
 
+{% endhighlight %}  
+        
         
 
 Теперь предположим, что ваш коллега нашёл какой-то баг в коде, исправил его и создал копию данной ветки с другим именем: fix/my-killer-feature-bug-fix.
@@ -275,8 +325,12 @@ $git push origin feature/my-killer-feature
 Теперь можно сливать исправленную ветку с feature/my-killer-feature с помощью команды git merge (убедитесь, что находитесь в нужной ветви).
 
             
+
+{% highlight git %}
+
 $git merge origin/fix/my-killer-feature-fix
 
+{% endhighlight %}  
         
 
 Проверяем конечный результат:
