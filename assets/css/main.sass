@@ -13,7 +13,10 @@ html
 
 .container
 	padding: 2px 20px
+	display: flex
+	justify-content: space-between
 	align-items: center
+
 body
 	background-color: #F2F2F2
 	font-family: 'Play', sans-serif
@@ -21,9 +24,6 @@ body
 	font-weight: 400
 	line-height: 1.4
 	color: #27332C
-
-// .home, .post, .page
-//	width: 100%
 
 // HEADER
 .header
@@ -35,7 +35,7 @@ body
 	background-color: $bg-head-footer
 	border-bottom: 3px solid #DFF68F
 	z-index: 2
-	.top_nav
+	#top_nav
 		ul
 			display: flex
 		li
@@ -58,10 +58,9 @@ a
 	&:visited
 		color: #47646f
 	&:hover
-		// color: #fff
 		text-decoration: none
 
-
+// POST
 .post-item
 	margin: 0 auto
 	background-color: #ffffff
@@ -69,8 +68,8 @@ a
 	height: 100%
 	margin-top: 20px
 	border-radius: 5px
-	// border: 1px solid #eee
 	box-shadow: 5px 5px 11px rgba(77,89,89, .1)
+	overflow: hidden
 	&_content
 		padding: 0px 30px 5px 78px
 	&_data
@@ -80,13 +79,12 @@ a
 	&_content
 		img
 			width: 100%
-			
+
 .post-content, .post
 	a
 		text-decoration: underline
 		text-decoration-color: #d6ec8c
 		&:hover
-			// color: #ffffff
 			background: #d6ec8c
 			text-decoration: none
 
@@ -102,7 +100,8 @@ a
 	padding: 3px 0 0 5px
 
 // PAGES
-
+.page
+	height: 100vh
 .post, .page
 	background-color: #ffffff
 	display: block
@@ -112,7 +111,7 @@ a
 	img
 		display: block
 		margin: 0 auto
-		width: 550px
+		width: 100%
 		height: auto
 
 .page-content
@@ -122,12 +121,11 @@ a
 
 .post_image_cover
 	width: 100%
-	height: 350px
-	display: block
+	// height: 350px
 	background-size: cover
 	background-position: center center
+	padding-top: 350px
 	&:hover
-		border: none
 		filter: opacity(30%)
 
 // MORE...
@@ -145,18 +143,16 @@ a
 // FOOTER
 
 .footer
+	position: absolute
 	color: #c3ccd3
 	background-color: $bg-head-footer
 	padding: 2px 0
-	bottom: 0
 	width: 100%
 .footer_col
 	&_item
 		display: block
-		// width: 450px
-		height: 100%
-
-	// TAGs
+	
+// TAGs
 
 .tags
 	a
@@ -171,7 +167,8 @@ a
 	&:hover
 		color: #1e383c
 		text-decoration: underline #DFF68F
-		
+
+
 // block-rigt
 
 // .block-rigt
@@ -185,3 +182,49 @@ a
 
 
 
+//MENU
+
+.active
+	display: inline-block
+	position: absolute
+	top: 38px
+	text-align: center
+	left: 0
+	background-color: $bg-head-footer
+	width: 100%
+	ul
+		display: inline-block
+		
+.active_close
+	display: none 
+	
+	
+	
+
+// ===
+
+//BTN
+#nav_btn
+	stroke: #FFFFFF
+	opacity: .95
+	transition: all 0.3s ease-in-out
+	cursor: pointer
+
+.open
+	.menu-item 
+		margin: 0 0 5px
+		&:first-child
+			transform: rotate(45deg)
+			transform-origin: 0
+		&:nth-child(2)
+			opacity: 0
+		&:nth-child(3) 
+        	transform: rotate(-45deg)
+        	transform-origin: 5px
+.menu-item 
+	background: #BACDD9
+	display: block
+	height: 2px
+	margin: 0 0 5px
+	transition: all 0.3s ease-in-out
+	width: 25px
